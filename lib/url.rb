@@ -10,10 +10,10 @@ class Url
   }
 
   def initialize(params)
-    @default_query_string = generate_default_query_string(params)
+    @default_query_string = generate_default_query_string(params.symbolize_keys.merge(timestamp: Time.new.to_i))
   end
 
-  attr_accessor :default_query_string
+  attr_reader :default_query_string
 
   def build
     "#{AppConfig.endpoint_url}.#{AppConfig.format}?#{default_query_string}&#{hash_key}"
