@@ -10,23 +10,23 @@ class Url
   }
 
   def initialize(params)
-    @default_query_string = generate_default_query_string(params.symbolize_keys.merge(timestamp: Time.new.to_i))
+    params.merge!(timestamp: Time.new.to_i).symbolize_keys!
+    @default_query_string = build_default_query_string(params)
   end
 
   attr_reader :default_query_string
 
   def build
-    "#{AppConfig.endpoint_url}.#{AppConfig.format}?#{default_query_string}&#{hash_key}"
+    "#{AppConfig.endpoint_url}.#{AppConfig.format}?#{default_query_string}&hashkey=#{hash_key}"
   end
 
   private
 
   def hash_key
-    sha1 = Digest::SHA1.hexdigest(default_query_string + "&#{AppConfig.api_key}")
-    "hashkey=#{sha1}"
+    Digest::SHA1.hexdigest(default_query_string + "&#{AppConfig.api_key}")
   end
 
-  def generate_default_query_string(params)
+  def build_default_query_string(params)
     default_params = Hash[DEFAULT_PARAMS.merge(params).sort]
     default_params.inject([]) { |array, param| array << param.join("=") }.join("&")
   end
