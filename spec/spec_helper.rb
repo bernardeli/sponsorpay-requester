@@ -3,6 +3,7 @@ ENV['RACK_ENV'] = 'test'
 require 'bundler'
 Bundler.require(:default, :test)
 
+Dir[File.dirname(__FILE__) + '/../lib/*.rb'].each {|file| require file }
 require './app.rb'
 
 set :views, 'views'
