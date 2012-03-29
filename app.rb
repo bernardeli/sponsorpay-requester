@@ -1,5 +1,6 @@
 # encoding: utf-8
 require 'json'
+require 'net/http'
 
 helpers Helpers
 
@@ -15,8 +16,8 @@ post '/fetch' do
 
   if @resp.code == '200' && Response.valid?(@resp)
     if @resp.message == "OK"
-      @offers = JSON.parse(@resp.body)['offers']
-      partial :offer, collection: @offers, layout: true
+      offers = JSON.parse(@resp.body)['offers']
+      partial :offer, collection: offers, layout: true
     else
       partial :no_offer, layout: true
     end

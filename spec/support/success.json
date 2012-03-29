@@ -1,0 +1,66 @@
+{
+  "code" : "OK",
+    "message" : "Ok",
+    "count" : 16,
+    "pages" : 1,
+    "information" : {
+      "app_name" : "Demo iframe for publisher - do not touch",
+      "appid" : 157,
+      "virtual_currency" : "Coins",
+      "country" : "DE",
+      "language" : "DE",
+      "support_url" : "http://api.sponsorpay.com/support?appid=157&uid=papapriiigiigggggg"
+    },
+    "offers" : [
+    {
+      "title" : "Solitaire - Das klassische Spiel",
+      "teaser" : "Herunterladen und STARTEN",
+      "required_actions" : "Herunterladen und STARTEN",
+      "link" : "http://api.sponsorpay.com/mbrowser?appid=157&device_id=2b6f0cc904d137be2e1730235f5664094b831186&fi=10&lpid=32733&pub0=doesitmatter&uid=papapriiigiigggggg",
+      "offer_types" : [
+      {
+        "offer_type_id" : 101,
+        "readable" : "Download"
+      },
+      {
+        "offer_type_id" : 112,
+        "readable" : "Gratis"
+      }
+      ],
+        "payout" : 20240,
+        "time_to_payout" : {
+          "amount" : 1500,
+          "readable" : "25 Minuten"
+        },
+        "thumbnail" : {
+          "lowres" : "http://acp-production.s3.amazonaws.com/app_icons/248/big_icon.png",
+          "hires" : "http://acp-production.s3.amazonaws.com/app_icons/248/big_icon.png"
+        }
+    },
+    {
+      "title" : "My Clinic",
+      "teaser" : "Herunterladen und STARTEN",
+      "required_actions" : "Herunterladen und STARTEN",
+      "link" : "http://api.sponsorpay.com/mbrowser?appid=157&device_id=2b6f0cc904d137be2e1730235f5664094b831186&fi=10&lpid=36198&pub0=doesitmatter&uid=papapriiigiigggggg",
+      "offer_types" : [
+      {
+        "offer_type_id" : 101,
+        "readable" : "Download"
+      },
+      {
+        "offer_type_id" : 112,
+        "readable" : "Gratis"
+      }
+      ],
+        "payout" : 9960,
+        "time_to_payout" : {
+          "amount" : 2700,
+          "readable" : "einer Stunde"
+        },
+        "thumbnail" : {
+          "lowres" : "http://acp-production.s3.amazonaws.com/app_icons/270/big_icon.png",
+          "hires" : "http://acp-production.s3.amazonaws.com/app_icons/270/big_icon.png"
+        }
+    }
+  ]
+}
