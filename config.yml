@@ -1,4 +1,4 @@
-development:
+default:
   url: http://api.sponsorpay.com/feed/v1/offers
   appid: 157
   format: json
